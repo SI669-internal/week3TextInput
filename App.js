@@ -41,8 +41,8 @@ class BasicInput extends React.Component {
 
 class HelloName extends React.Component {
   
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       firstName: "",
       lastName: ""
@@ -72,7 +72,35 @@ class HelloName extends React.Component {
       </View>
     )
   }
+}
 
+class HelloName2 extends React.Component {
+  
+  constructor() {
+    super();
+    this.state = {
+      firstName: ""
+    };
+  }
+
+  // implement this.handleChangeText
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>
+          Hello, {this.state.firstName} !
+        </Text>
+        <View>
+          <Text>First Name: </Text>
+          <TextInput
+            placeholder="enter first name"
+            onChangeText={this.handleChangeText}
+          />
+        </View>
+      </View>
+    )
+  }
 }
 
 class SaveApp extends React.Component {
@@ -145,6 +173,6 @@ const styles = StyleSheet.create({
 
 
 //export default DummyInput;
-//export default BasicInput;
-export default HelloName;
+//export default HelloName;
+export default HelloName2;
 //export default SaveApp;
