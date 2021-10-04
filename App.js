@@ -74,28 +74,35 @@ class HelloName extends React.Component {
   }
 }
 
-class HelloName2 extends React.Component {
+class HelloNameDestruct extends React.Component {
   
   constructor() {
     super();
     this.state = {
-      firstName: ""
+      firstName: "",
+      lastName: ""
     };
   }
 
-  // implement this.handleChangeText
-
   render() {
+    let {firstName, lastName} = this.state;
     return (
       <View style={styles.container}>
         <Text>
-          Hello, {this.state.firstName} !
+          Hello, {firstName} {lastName}!
         </Text>
         <View>
           <Text>First Name: </Text>
           <TextInput
             placeholder="enter first name"
-            onChangeText={this.handleChangeText}
+            onChangeText={textValue => this.setState({firstName: textValue})}
+          />
+        </View>
+        <View>
+          <Text>Last Name: </Text>
+          <TextInput
+            placeholder="enter last name"
+            onChangeText={textValue => this.setState({lastName: textValue})}
           />
         </View>
       </View>
@@ -173,6 +180,6 @@ const styles = StyleSheet.create({
 
 
 //export default DummyInput;
-//export default HelloName;
-//export default HelloName2;
+// export default HelloName;
+//export default HelloNameDestruct;
 export default SaveApp;
