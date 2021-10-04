@@ -129,7 +129,7 @@ class SaveApp extends React.Component {
         </Text>
         <TextInput
           onChangeText={this.handleChange}
-          placeholder="Type here to translate!"
+          placeholder="Type here!"
           style={styles.input}
         />
         <TouchableOpacity
@@ -174,5 +174,5 @@ const styles = StyleSheet.create({
 
 //export default DummyInput;
 //export default HelloName;
-export default HelloName2;
-//export default SaveApp;
+//export default HelloName2;
+export default SaveApp;
