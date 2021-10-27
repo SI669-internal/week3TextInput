@@ -110,6 +110,44 @@ class HelloNameDestruct extends React.Component {
   }
 }
 
+class HelloName2 extends React.Component {
+  
+  constructor() {
+    super();
+    this.state = {
+      firstName: "",
+      lastName: ""
+    };
+  }
+
+  // implement handleChangeFirstName here
+  
+  render() {
+    let {firstName, lastName} = this.state;
+    return (
+      <View style={styles.container}>
+        <Text>
+          Hello, {firstName} {lastName}!
+        </Text>
+        <View>
+          <Text>First Name: </Text>
+          <TextInput
+            placeholder="enter first name"
+            onChangeText={this.handleChangeFirstName}
+          />
+        </View>
+        <View>
+          <Text>Last Name: </Text>
+          <TextInput
+            placeholder="enter last name"
+            onChangeText={textValue => this.setState({lastName: textValue})}
+          />
+        </View>
+      </View>
+    )
+  }
+}
+
 class SaveApp extends React.Component {
 
   constructor(props) {
@@ -179,7 +217,8 @@ const styles = StyleSheet.create({
 });
 
 
-//export default DummyInput;
+// export default DummyInput;
 // export default HelloName;
-//export default HelloNameDestruct;
-export default SaveApp;
+// export default HelloNameDestruct;
+export default HelloName2;
+// export default SaveApp;
