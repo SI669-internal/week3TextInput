@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, 
   TouchableOpacity } from 'react-native';
 
-
 class DummyInput extends React.Component {
 
   render() {
@@ -121,6 +120,11 @@ class HelloName2 extends React.Component {
   }
 
   // implement handleChangeFirstName here
+  handleChangeFirstName = (text) => {
+    this.setState({
+      firstName: text
+    })
+  }
   
   render() {
     let {firstName, lastName} = this.state;
@@ -218,7 +222,8 @@ const styles = StyleSheet.create({
 
 
 // export default DummyInput;
+// export default BasicInput;
 // export default HelloName;
 // export default HelloNameDestruct;
-export default HelloName2;
-// export default SaveApp;
+// export default HelloName2;
+export default SaveApp;
